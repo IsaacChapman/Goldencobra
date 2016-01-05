@@ -134,7 +134,7 @@ module Goldencobra
     end
 
     private
-    
+
     def self.generate_default_setting(key, yml_data, parent_id=nil)
       if yml_data[key].class == Hash
         #check if childen keys are value and type or not
@@ -181,6 +181,7 @@ module Goldencobra
     end
 
     def update_cache
+      require 'fileutils'
       @@key_value ||= {}
       @@key_value[self.path_name] = nil
       FileUtils.mkdir_p("tmp/settings")
@@ -191,6 +192,7 @@ module Goldencobra
       if File.exists?("tmp/settings/updated_#{name}.txt")
         File.mtime("tmp/settings/updated_#{name}.txt")
       else
+        require 'fileutils'
         FileUtils.mkdir_p("tmp/settings")
         FileUtils.touch("tmp/settings/updated_#{name}.txt")
         return Time.now
