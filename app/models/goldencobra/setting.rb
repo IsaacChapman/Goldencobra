@@ -195,7 +195,7 @@ module Goldencobra
       end
     end
 
-    def absolute_tmp_path(file_name = nil)
+    def self.absolute_tmp_path(file_name = nil)
       File.join([Rails.root, "tmp", "settings", file_name].compact)
     end
   end
