@@ -1,3 +1,5 @@
+V1.4.78
+  - Make Goldencobra::Setting use absolute paths for accessing the file system
 V1.4.77
   - FIX für Artikel Bearbeiten URL, wenn ID und URL unterschiedlicher Artikel identisch ist
 V1.4.76
