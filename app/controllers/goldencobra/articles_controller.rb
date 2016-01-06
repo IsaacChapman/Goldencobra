@@ -247,10 +247,8 @@ module Goldencobra
 
     def set_expires_in
       if is_cachable?
-        expires_in 30.seconds, :public => true
         response.last_modified = @article.date_of_last_modified_child
       else
-        expires_in 1.seconds, :public => true
         response.last_modified = Time.now
       end
     end
